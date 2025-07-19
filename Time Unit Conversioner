@@ -1,0 +1,68 @@
+void TimeUnitConversioner() {
+	string before;
+	string after;
+	int time;
+
+	cout << "please enter unit (s, m, h, day, month, year):";
+	cin >> before;
+
+	cout << "please enter converted unit (s, m, h, day, month, year)";
+	cin >> after;
+
+	cout << "please enter the time :";
+	cin >> time;
+
+	double seconds = 0;
+
+	if (before == "s") {
+		seconds = time;
+	}
+	else if (before == "m") {
+		seconds = time * 60;
+	}
+	else if (before == "h") {
+		seconds = time * 3600;
+	}
+	else if (before == "day") {
+		seconds = time * 86400;
+	}
+	else if (before == "month") {
+		seconds = time * 2592000; 
+	}
+	else if (before == "year") {
+		seconds = time * 31536000; 
+	}
+	else {
+		cout << "Invalid input unit." << endl << endl;;
+		return;
+	}
+
+	double result = 0;
+
+	if (after == "s") {
+		result = seconds;
+	}
+	else if (after == "m") {
+		result = seconds / 60;
+	}
+	else if (after == "h") {
+		result = seconds / 3600;
+	}
+	else if (after == "day") {
+		result = seconds / 86400;
+	}
+	else if (after == "month") {
+		result = seconds / 2592000;
+		cout << "Note: One month is assumed to be 30 days." << endl << endl;;
+	}
+	else if (after == "year") {
+		result = seconds / 31536000;
+		cout << "Note: One year is assumed to be 365 days." << endl << endl;;
+	}
+	else {
+		cout << "Invalid output unit." << endl << endl;;
+		return;
+	}
+
+	cout << time << " " << before << " = " << result << " " << after << endl << endl;;
+}
